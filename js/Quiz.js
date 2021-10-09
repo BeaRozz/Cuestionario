@@ -49,25 +49,24 @@ class Quiz {
       fill(195, 6, 177);
       textSize(20);
       text("*NOTA: ¡El concursante que respondió correctamente, está resaltado en color verde!", 30, 230);
+      var display_position = 260;
+      for(var plr in allContestants){
+        var correctAns = "2";
+        if (correctAns === allContestants[plr].answer){
+          fill("green")
+        }else{
+          fill("black");
+        }
+        display_position+=23;
+        textSize(20);
+        text(allContestants[plr].name + ": " + allContestants[plr].answer, 120,display_position)
+      }
     }
 
     //escribe aquí el código para agregar una nota
 
     //escribe el código para resaltar al concursante que respondió correctamente
-    for (var plr in allContestants){
-      var correctAns = "2";
-      var writeContestants = [plr]
-      console.log(plr[10, 0])
-      //console.log(allContestants[plr].name);
-      if (correctAns === allContestants[plr].answer){
-        fill("Green");
-      }else{
-        fill("red");
-      }
-      var score = createElement("H3");
-      score.html(allContestants[plr].name + " : " + allContestants[plr].answer);
-      score.position(230,260);
-    }
+    
       
     }
 }
